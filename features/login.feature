@@ -9,9 +9,8 @@
 #       | foobar   | barfoo               | Your username is invalid!      |
 Feature: Login
 
-  @wip
   Scenario Outline: Log in using username and password
-    Given I am on Login page
+    Given I am on login page
     When I enter <username> username
     And I enter <password> password
     And I press on Login button

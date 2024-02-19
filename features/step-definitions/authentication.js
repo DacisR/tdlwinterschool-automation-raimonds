@@ -34,12 +34,6 @@ When('I press on Login button', async function() {
     await button.click();
 });
 
-Then('I see a message {string}', async function(message) {
-    const flashMessage = await $("#flash");
-    // console.log(await flashMessage.getText());
-    await expect(flashMessage).toHaveText(expect.stringContaining(message));
-});
-
 Then('I {word} see the Logout button', async function(visibility) {
     if (visibility === "do") {
         await expect($("i*=Logout")).toBeDisplayed();
