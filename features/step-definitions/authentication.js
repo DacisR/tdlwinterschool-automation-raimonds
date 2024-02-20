@@ -1,6 +1,7 @@
 import { When, Then } from '@wdio/cucumber-framework';
 import { expect } from '@wdio/globals'
 import loginPage from '../page-objects/login.page.js';
+import AllureReporter from '@wdio/allure-reporter';
 
 // Given(/^I am on the (\w+) page$/, async (page) => {
 //     await browser.url(`https://the-internet.herokuapp.com/${page}`);
@@ -18,6 +19,7 @@ import loginPage from '../page-objects/login.page.js';
 // });
 
 When('I enter {string} username', async function(username) {
+    AllureReporter.addArgument('username', username);
     await loginPage.usernameInput.setValue(username);
 });
 
