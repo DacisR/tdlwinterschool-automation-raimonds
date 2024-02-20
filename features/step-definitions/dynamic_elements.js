@@ -1,6 +1,6 @@
-import { Given, When, Then } from '@wdio/cucumber-framework';
-import { expect, $ } from '@wdio/globals'
+import { When } from '@wdio/cucumber-framework';
+import dynamicElementsPage from '../page-objects/dynamic_elements.page.js';
 
 When("I press the Start button", async function() {
-    await $('#start button').click();
+    await dynamicElementsPage.startButton.click();
 });
